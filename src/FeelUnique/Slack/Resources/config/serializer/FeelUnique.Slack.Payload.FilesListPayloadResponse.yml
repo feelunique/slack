@@ -1,0 +1,6 @@
+FeelUnique\Slack\Payload\FilesListPayloadResponse:
+    properties:
+        files:
+            type: array<FeelUnique\Slack\Model\File>
+        paging:
+            type: FeelUnique\Slack\Model\Paging

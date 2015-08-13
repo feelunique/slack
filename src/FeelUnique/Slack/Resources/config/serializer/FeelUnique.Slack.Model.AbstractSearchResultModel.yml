@@ -1,0 +1,10 @@
+FeelUnique\Slack\Model\AbstractSearchResultModel:
+    properties:
+        pagination:
+            type: FeelUnique\Slack\Model\Paging
+        paging:
+            type: FeelUnique\Slack\Model\Paging
+        total:
+            type: integer
+        channel:
+            type: string

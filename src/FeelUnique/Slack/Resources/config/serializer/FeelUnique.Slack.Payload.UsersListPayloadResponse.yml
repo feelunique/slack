@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\UsersListPayloadResponse:
+    properties:
+        members:
+            type: array<FeelUnique\Slack\Model\User>

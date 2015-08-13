@@ -1,0 +1,6 @@
+FeelUnique\Slack\Payload\GroupsOpenPayloadResponse:
+    properties:
+        noOp:
+            type: boolean
+        alreadyOpen:
+            type: boolean

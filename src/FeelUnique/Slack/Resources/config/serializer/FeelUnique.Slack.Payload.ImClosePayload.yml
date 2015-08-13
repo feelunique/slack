@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\ImClosePayload:
+    properties:
+        channel:
+            type: string

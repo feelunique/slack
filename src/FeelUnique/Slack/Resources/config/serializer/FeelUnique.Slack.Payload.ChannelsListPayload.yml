@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\ChannelsListPayload:
+    properties:
+        alreadyArchived:
+            type: boolean

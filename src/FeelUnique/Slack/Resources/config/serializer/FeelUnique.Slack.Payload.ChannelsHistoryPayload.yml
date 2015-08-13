@@ -1,0 +1,10 @@
+FeelUnique\Slack\Payload\ChannelsHistoryPayload:
+    properties:
+        channel:
+            type: string
+        oldest:
+            type: string
+        latest:
+            type: string
+        count:
+            type: integer

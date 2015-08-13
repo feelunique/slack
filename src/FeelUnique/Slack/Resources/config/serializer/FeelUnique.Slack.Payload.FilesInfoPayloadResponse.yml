@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\FilesInfoPayloadResponse:
+    properties:
+        file:
+            type: FeelUnique\Slack\Model\File

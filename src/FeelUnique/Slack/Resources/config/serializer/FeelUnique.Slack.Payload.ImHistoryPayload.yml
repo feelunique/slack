@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\ImHistoryPayload:
+    properties:
+        channel:
+            type: string

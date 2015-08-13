@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\ImListPayloadResponse:
+    properties:
+        channels:
+            type: array<FeelUnique\Slack\Model\ImChannel>

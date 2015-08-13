@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\UsersInfoPayloadResponse:
+    properties:
+        user:
+            type: FeelUnique\Slack\Model\User

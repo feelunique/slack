@@ -1,0 +1,8 @@
+FeelUnique\Slack\Payload\FilesInfoPayload:
+    properties:
+        file:
+            type: string
+        count:
+            type: integer
+        page:
+            type: integer

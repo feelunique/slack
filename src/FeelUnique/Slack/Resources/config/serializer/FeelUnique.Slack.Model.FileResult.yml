@@ -1,0 +1,4 @@
+FeelUnique\Slack\Model\FileResult:
+    properties:
+        matches:
+            type: array<FeelUnique\Slack\Model\FileResultItem>

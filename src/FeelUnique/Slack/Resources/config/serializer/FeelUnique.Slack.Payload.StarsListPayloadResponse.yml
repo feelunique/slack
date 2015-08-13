@@ -1,0 +1,6 @@
+FeelUnique\Slack\Payload\StarsListPayloadResponse:
+    properties:
+        items:
+            type: array<FeelUnique\Slack\Model\StarredItem>
+        paging:
+            type: FeelUnique\Slack\Model\Paging

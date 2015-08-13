@@ -1,8 +1,0 @@
-CL\Slack\Payload\ChatUpdatePayload:
-    properties:
-        text:
-            type: string
-        channel:
-            type: string
-        ts:
-            type: string

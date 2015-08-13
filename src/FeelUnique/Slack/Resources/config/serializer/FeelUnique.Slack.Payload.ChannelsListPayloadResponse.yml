@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\ChannelsListPayloadResponse:
+    properties:
+        channels:
+            type: array<FeelUnique\Slack\Model\Channel>

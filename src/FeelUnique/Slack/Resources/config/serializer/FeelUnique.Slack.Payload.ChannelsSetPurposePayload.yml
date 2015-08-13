@@ -1,0 +1,6 @@
+FeelUnique\Slack\Payload\ChannelsSetPurposePayload:
+    properties:
+        channel:
+            type: string
+        purpose:
+            type: string

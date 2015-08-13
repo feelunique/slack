@@ -1,0 +1,6 @@
+FeelUnique\Slack\Payload\GroupsInvitePayload:
+    properties:
+        channel:
+            type: string
+        user:
+            type: string

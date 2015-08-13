@@ -1,0 +1,6 @@
+FeelUnique\Slack\Payload\ChannelsSetTopicPayload:
+    properties:
+        channel:
+            type: string
+        topic:
+            type: string

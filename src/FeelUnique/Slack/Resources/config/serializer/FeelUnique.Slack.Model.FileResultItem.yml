@@ -1,0 +1,4 @@
+FeelUnique\Slack\Model\FileResultItem:
+    properties:
+        channel:
+            type: FeelUnique\Slack\Model\SimpleChannel

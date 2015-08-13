@@ -1,0 +1,8 @@
+FeelUnique\Slack\Payload\ImHistoryPayloadResponse:
+    properties:
+        latest:
+            type: string
+        hasMore:
+            type: boolean
+        messages:
+            type: array<FeelUnique\Slack\Model\SimpleMessage>

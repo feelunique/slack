@@ -1,0 +1,7 @@
+FeelUnique\Slack\Payload\ApiTestPayload:
+    properties:
+        args:
+            type: array
+            inline: true
+        error:
+            type: string

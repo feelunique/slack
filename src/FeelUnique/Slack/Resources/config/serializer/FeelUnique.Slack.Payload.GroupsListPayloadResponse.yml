@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\GroupsListPayloadResponse:
+    properties:
+        groups:
+            type: array<FeelUnique\Slack\Model\Group>

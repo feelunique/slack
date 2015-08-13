@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\ChannelsJoinPayload:
+    properties:
+        name:
+            type: string

@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\SearchFilesPayloadResponse:
+    properties:
+        files:
+            type: FeelUnique\Slack\Model\FileResult

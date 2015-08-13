@@ -1,0 +1,6 @@
+FeelUnique\Slack\Payload\GroupsClosePayloadResponse:
+    properties:
+        noOp:
+            type: boolean
+        alreadyClosed:
+            type: boolean

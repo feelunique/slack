@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\GroupsInvitePayloadResponse:
+    properties:
+        group:
+            type: FeelUnique\Slack\Model\Group

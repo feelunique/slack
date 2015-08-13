@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\GroupsLeavePayload:
+    properties:
+        channel:
+            type: string

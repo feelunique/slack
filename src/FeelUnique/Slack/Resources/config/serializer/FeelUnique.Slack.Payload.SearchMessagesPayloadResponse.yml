@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\SearchMessagesPayloadResponse:
+    properties:
+        messages:
+            type: FeelUnique\Slack\Model\MessageResult

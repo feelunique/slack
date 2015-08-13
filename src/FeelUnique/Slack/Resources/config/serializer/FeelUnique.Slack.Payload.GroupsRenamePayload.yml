@@ -1,0 +1,6 @@
+FeelUnique\Slack\Payload\GroupsRenamePayload:
+    properties:
+        channel:
+            type: string
+        name:
+            type: string

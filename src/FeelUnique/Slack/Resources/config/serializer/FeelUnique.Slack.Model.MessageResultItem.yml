@@ -1,0 +1,14 @@
+FeelUnique\Slack\Model\MessageResultItem:
+    properties:
+        ts:
+            type: string
+        type:
+            type: string
+        channel:
+            type: FeelUnique\Slack\Model\SimpleChannel
+        user:
+            type: string
+        username:
+            type: string
+        text:
+            type: string

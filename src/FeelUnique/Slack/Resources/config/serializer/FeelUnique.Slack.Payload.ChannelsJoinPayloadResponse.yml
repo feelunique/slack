@@ -1,0 +1,6 @@
+FeelUnique\Slack\Payload\ChannelsJoinPayloadResponse:
+    properties:
+        alreadyInChannel:
+            type: boolean
+        channel:
+            type: FeelUnique\Slack\Model\Channel

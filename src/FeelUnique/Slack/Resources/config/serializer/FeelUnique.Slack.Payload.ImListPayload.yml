@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\ImListPayload:
+    properties:
+        alreadyArchived:
+            type: boolean

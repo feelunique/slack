@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\UsersSetPresencePayload:
+    properties:
+        presence:
+            type: string

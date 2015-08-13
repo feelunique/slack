@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\ChannelsSetPurposePayloadResponse:
+    properties:
+        purpose:
+            type: string

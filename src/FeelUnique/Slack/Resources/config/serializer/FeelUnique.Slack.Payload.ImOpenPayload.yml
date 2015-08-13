@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\ImOpenPayload:
+    properties:
+        user:
+            type: string

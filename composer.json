@@ -20,7 +20,7 @@
   },
   "autoload": {
     "psr-4": {
-      "CL\\Slack\\": "src/CL/Slack/"
+      "FeelUnique\\Slack\\": "src/FeelUnique/Slack/"
     }
   },
   "config": {

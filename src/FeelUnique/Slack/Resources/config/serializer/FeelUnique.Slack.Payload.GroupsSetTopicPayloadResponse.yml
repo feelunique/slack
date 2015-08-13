@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\GroupsSetTopicPayloadResponse:
+    properties:
+        topic:
+            type: string

@@ -1,0 +1,14 @@
+FeelUnique\Slack\Model\Message:
+    properties:
+        ts:
+            type: string
+        type:
+            type: string
+        user:
+            type: string
+        username:
+            type: string
+        text:
+            type: string
+        channel:
+            type: FeelUnique\Slack\Model\Channel

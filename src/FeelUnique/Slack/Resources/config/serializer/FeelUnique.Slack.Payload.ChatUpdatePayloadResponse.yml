@@ -1,0 +1,8 @@
+FeelUnique\Slack\Payload\ChatUpdatePayloadResponse:
+    properties:
+        text:
+            type: string
+        channel:
+            type: string
+        ts:
+            type: string

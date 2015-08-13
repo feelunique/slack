@@ -1,0 +1,6 @@
+FeelUnique\Slack\Payload\ChannelsMarkPayload:
+    properties:
+        channel:
+            type: string
+        ts:
+            type: string

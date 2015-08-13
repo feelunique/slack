@@ -1,0 +1,4 @@
+FeelUnique\Slack\Payload\ChannelsCreatePayloadResponse:
+    properties:
+        channel:
+            type: FeelUnique\Slack\Model\Channel
