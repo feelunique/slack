@@ -10,8 +10,12 @@ use FeelUnique\Slack\Transport\ApiClient;
 use FeelUnique\Slack\Transport\Events\RequestEvent;
 use FeelUnique\Slack\Transport\Events\ResponseEvent;
 use GuzzleHttp\Client;
-use GuzzleHttp\Subscriber\History;
-use GuzzleHttp\Subscriber\Mock;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
+use GuzzleHttp\Psr7\Response;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 
 class ApiClientTest extends AbstractTestCase
@@ -22,30 +26,29 @@ class ApiClientTest extends AbstractTestCase
     {
         $self             = $this;
         $eventsDispatched = [];
-        $history          = new History();
-        $mock             = new Mock();
-        $mockRequestData  = [
-            'foo'   => 'bar',
-            'token' => self::TOKEN,
-        ];
         $mockResponseData = [
             'ok'  => true,
             'foo' => 'bar',
         ];
+        $mockResponseBody = json_encode($mockResponseData);
+
+        $container        = [];
+        $history          = Middleware::history($container);
+        $mockHandler      = new MockHandler([
+            new Response(200, [
+                'Content-Length' => strlen($mockResponseBody)
+            ], $mockResponseBody)
+        ]);
+        $handler = HandlerStack::create($mockHandler);
+        $handler->push($history);
+        $mockRequestData  = [
+            'foo'   => 'bar',
+            'token' => self::TOKEN,
+        ];
+        $client = new Client(['handler' => $handler]);
 
         $mockPayload = new MockPayload();
         $mockPayload->setFoo('bar');
-
-        $mockResponseBody = json_encode($mockResponseData);
-        $mock->addResponse(sprintf(
-            "HTTP/1.1 200 OK\r\nContent-Length: %d\r\n\r\n%s",
-            strlen($mockResponseBody),
-            $mockResponseBody
-        ));
-
-        $client = new Client();
-        $client->getEmitter()->attach($history);
-        $client->getEmitter()->attach($mock);
 
         $apiClient = new ApiClient(self::TOKEN, $client);
         $apiClient->addRequestListener(function (RequestEvent $event) use (&$eventsDispatched, $mockRequestData, $self) {
@@ -60,14 +63,20 @@ class ApiClientTest extends AbstractTestCase
 
         $apiClient->send($mockPayload);
 
-        $lastRequest = $history->getLastRequest();
+        $countHistory = count($container);
+        $this->assertEquals(1, $countHistory);
+
+        /** @var RequestInterface $lastRequest */
+        $lastRequest = $container[0]['request'];
+        /** @var ResponseInterface $lastRequest */
+        $lastResponse = $container[0]['response'];
         $expectedUrl = ApiClient::API_BASE_URL . 'mock';
         parse_str($lastRequest->getBody()->__toString(), $lastRequestContent);
-        $lastResponseContent = json_decode($history->getLastResponse()->getBody(), true);
+        $lastResponseContent = json_decode($lastResponse->getBody(), true);
 
         $this->assertEquals($mockRequestData, $lastRequestContent);
         $this->assertEquals($mockResponseData, $lastResponseContent);
-        $this->assertEquals($expectedUrl, $history->getLastRequest()->getUrl());
+        $this->assertEquals($expectedUrl, $lastRequest->getUri()->__toString());
 
         $this->assertArrayHasKey(ApiClient::EVENT_REQUEST, $eventsDispatched);
         $this->assertArrayHasKey(ApiClient::EVENT_RESPONSE, $eventsDispatched);

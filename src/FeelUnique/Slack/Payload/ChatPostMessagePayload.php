@@ -3,7 +3,6 @@
 namespace FeelUnique\Slack\Payload;
 
 use FeelUnique\Slack\Model\Attachment;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @link Official documentation at https://api.slack.com/methods/chat.postMessage
@@ -56,13 +55,13 @@ class ChatPostMessagePayload extends AbstractPayload
     private $parse;
 
     /**
-     * @var Attachment[]|ArrayCollection
+     * @var Attachment[]
      */
     private $attachments;
 
     public function __construct()
     {
-        $this->attachments = new ArrayCollection();
+        $this->attachments = [];
     }
 
     /**
@@ -256,7 +255,7 @@ class ChatPostMessagePayload extends AbstractPayload
     }
 
     /**
-     * @return Attachment[]|ArrayCollection
+     * @return Attachment[]
      */
     public function getAttachments()
     {
@@ -268,7 +267,7 @@ class ChatPostMessagePayload extends AbstractPayload
      */
     public function addAttachment(Attachment $attachment)
     {
-        $this->attachments->add($attachment);
+        $this->attachments[] = $attachment;
     }
 
     /**

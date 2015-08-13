@@ -57,10 +57,10 @@ class ChatPostMessagePayloadTest extends AbstractPayloadTest
     protected function getExpectedPayloadData(PayloadInterface $payload)
     {
         /** @var Attachment $attachment */
-        $attachment = $payload->getAttachments()->first();
+        $attachment = $payload->getAttachments()[0];
 
         /** @var AttachmentField $attachmentField */
-        $attachmentField = $attachment->getFields()->first();
+        $attachmentField = $attachment->getFields()[0];
 
         return [
             'channel'      => $payload->getChannel(),

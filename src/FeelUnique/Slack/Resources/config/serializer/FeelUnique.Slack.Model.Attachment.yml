@@ -9,4 +9,4 @@ FeelUnique\Slack\Model\Attachment:
         color:
             type: string
         fields:
-            type: ArrayCollection<FeelUnique\Slack\Model\AttachmentField>
+            type: array<FeelUnique\Slack\Model\AttachmentField>

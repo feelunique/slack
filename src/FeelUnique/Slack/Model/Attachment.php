@@ -2,8 +2,6 @@
 
 namespace FeelUnique\Slack\Model;
 
-use Doctrine\Common\Collections\ArrayCollection;
-
 /**
  * @link Official documentation at https://api.slack.com/docs/attachments
  */
@@ -60,13 +58,13 @@ class Attachment extends AbstractModel
     private $fallback;
 
     /**
-     * @var AttachmentField[]|ArrayCollection
+     * @var AttachmentField[]
      */
     private $fields;
 
     public function __construct()
     {
-        $this->fields = new ArrayCollection();
+        $this->fields = [];
     }
 
     /**
@@ -236,11 +234,11 @@ class Attachment extends AbstractModel
      */
     public function addField(AttachmentField $field)
     {
-        $this->fields->add($field);
+        $this->fields[] = $field;
     }
 
     /**
-     * @return AttachmentField[]|ArrayCollection
+     * @return AttachmentField[]
      */
     public function getFields()
     {

@@ -19,4 +19,4 @@ FeelUnique\Slack\Payload\ChatPostMessagePayload:
         parse:
             type: string
         attachments:
-            type: ArrayCollection<FeelUnique\Slack\Model\Attachment>
+            type: array<FeelUnique\Slack\Model\Attachment>
